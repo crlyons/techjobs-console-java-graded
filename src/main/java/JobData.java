@@ -5,10 +5,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -84,6 +81,7 @@ public class JobData {
                 jobs.add(row);
             }
         }
+        jobs.sort(Comparator.comparing(o -> o.get(column)));
 
         return jobs;
     }
